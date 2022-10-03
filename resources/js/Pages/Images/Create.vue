@@ -32,6 +32,7 @@
 </template>
 
 <script>
+    //like it 
 export default {
     name: 'Create',
     props : {

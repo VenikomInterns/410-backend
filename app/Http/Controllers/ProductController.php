@@ -16,7 +16,8 @@ class ProductController extends Controller
     //
     public function index(): Response
     {
-        $categories = Category::all();
+        //what if we have thousands of records
+        $categories = Category::all(); 
         $products = Product::all();
         return Inertia::render('Products/Index',compact('products','categories'));
     }
@@ -37,7 +38,7 @@ class ProductController extends Controller
         $validated = $request->validate([
             'name' => 'required',
             'price' => 'required',
-            'category_id' => 'required'
+            'category_id' => 'required' //what if category_id is string or anything else
         ]);
 
         $product= new Product($validated);
@@ -57,7 +58,7 @@ class ProductController extends Controller
     {
         $validated = $request->validate([
             'name' => 'required',
-            'price' => 'required',
+            'price' => 'required',//what if price sent by user is string
         ]);
 
         $product->fill($validated);

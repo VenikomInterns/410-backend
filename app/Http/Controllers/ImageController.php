@@ -17,18 +17,19 @@ class ImageController extends Controller
 {
     public function index(): Response
     {
+        //what if we have thousands of records?
         $products = Product::all();
-        $images = Image::all();
         return Inertia::render('Images/Index',compact('images','products'));
     }
 
     public function show(Image $image): Response
     {
         return Inertia::render('Images/Show',compact('image'));
-    }
+    } //excellent
 
     public function create(): Response
     {
+         //what if we have thousands of records?
         $products = Product::all();
         return Inertia::render('Images/Create',compact('products'));
     }
@@ -36,8 +37,8 @@ class ImageController extends Controller
     public function store(Request $request): Redirector|Application|RedirectResponse
     {
         $validated = $request->validate([
-            'image' => 'required|image|mimes:jpeg,png,jpg,svg,webp',
-            'product_id' => 'required',
+            'image' => 'required|image|mimes:jpeg,png,jpg,svg,webp', //good
+            'product_id' => 'required', //what if users sends string ? 
         ]);
 
 //        dd($request->file());
@@ -48,7 +49,7 @@ class ImageController extends Controller
         }
         $image = new Image();
         $image->name = $name;
-        $image->url = 'http://127.0.0.1:5173/storage/app/public/images/'.$name;
+        $image->url = 'http://127.0.0.1:5173/storage/app/public/images/'.$name; 
         $image->product_id = $validated['product_id'];
         $image->save();
 
@@ -61,7 +62,7 @@ class ImageController extends Controller
         $path = storage_path().'/app/public/images/'.$image->name;
         if(File::exists($path)) {
             File::delete($path);
-        }
+        }//good
         $image->delete();
         return redirect()->back();
     }

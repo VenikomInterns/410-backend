@@ -30,6 +30,7 @@ export default {
             form: this.$inertia.form({
                 name: this.product.name,
                 price: this.product.price
+                //edit of category ?
             })
         }
     },

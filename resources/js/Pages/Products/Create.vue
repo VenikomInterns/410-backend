@@ -46,6 +46,7 @@ export default {
     },
     methods: {
         submit(){
+            //use form helper
             this.$inertia.post(route('products.store'),this.form)
         }
     }

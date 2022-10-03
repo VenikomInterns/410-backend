@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->float('price');
-            $table->foreignId('category_id');
+            $table->foreignId('category_id'); // should be ->constained()
             $table->timestamps();
         });
     }

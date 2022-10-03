@@ -63,6 +63,7 @@ export default {
     },
     methods: {
         productName(id) {
+            //can be done on backend much easier
             for (const product of this.products) {
                 if (product.id === id) {
                     return product.name;
@@ -72,6 +73,8 @@ export default {
         },
         showImage(name){
             return new URL('../../../../storage/app/public/images/'+name,import.meta.url).href;
+            // this is very wrong and wont work in production.
+            // u need to generate public link not incude it in npm build
         }
     }
 }

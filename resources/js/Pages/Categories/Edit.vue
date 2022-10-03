@@ -29,6 +29,8 @@ export default {
     },
     methods: {
         submit(){
+            //its much better to use form helper put method
+            //for example this.form.put(route....)
             this.$inertia.put(route('categories.update',this.category), this.form);
         }
     }

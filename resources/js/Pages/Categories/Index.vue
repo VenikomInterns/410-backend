@@ -23,7 +23,7 @@
             </tr>
             </thead>
             <tbody>
-            <tr v-for="category in categories" :key="category.id">
+            <tr v-for="category in categories" :key="category.id"> <!--missing :key="" attribute-->
                 <th scope="row">
                     {{category.id}}
                 </th>

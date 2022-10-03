@@ -16,17 +16,17 @@ class CategoryController extends Controller
     {
         $categories = Category::all();
         return Inertia::render('Categories/Index',compact('categories'));
-    }
+    } //excellent
 
     public function show(Category $category): Response
     {
         return Inertia::render('Categories/Show',compact('category'));
-    }
+    }//excellent
 
     public function create(): Response
     {
         return Inertia::render('Categories/Create');
-    }
+    }//excellent
 
     public function store(Request $request): RedirectResponse
     {
@@ -37,12 +37,12 @@ class CategoryController extends Controller
         Category::query()->create($validated);
 
         return redirect('categories');
-    }
+    }//excellent
 
     public function edit(Category $category): Response
     {
         return Inertia::render('Categories/Edit',compact('category'));
-    }
+    }//excellent
 
     public function update(Category $category, Request $request): RedirectResponse
     {
@@ -54,11 +54,11 @@ class CategoryController extends Controller
         $category->save();
 
         return redirect('categories');
-    }
+    }//excellent
 
     public function destroy(Category $category): RedirectResponse
     {
-        $category->delete();
+        $category->delete(); //what if this category has products?
         return redirect()->back();
     }
 }

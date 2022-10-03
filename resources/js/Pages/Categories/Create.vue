@@ -25,6 +25,8 @@ export default {
     },
     methods: {
         submit(){
+             //its much better to use form helper post method
+            //for example this.form.post(route....)
             this.$inertia.post(route('categories.store'),this.form)
         }
     }

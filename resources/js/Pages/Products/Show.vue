@@ -1,5 +1,6 @@
 <template>
     <div>
+        <!-- file is Show but we are receiving products props thats -->
         {{ products }}
     </div>
 </template>

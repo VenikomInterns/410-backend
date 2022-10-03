@@ -12,6 +12,6 @@ class CategoryApiController extends Controller
     {
         $categories = Category::all();
 
-        return JsonResource::make($categories);
+        return JsonResource::make($categories); // when returning list, we need to use JsonResource::collection
     }
 }

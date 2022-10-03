@@ -1,5 +1,6 @@
 <template>
     <div>
+        <!--This results into raw category-->
         {{ category }}
     </div>
 </template>

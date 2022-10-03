@@ -1,5 +1,6 @@
 <template>
     <div>
+        <!--this will result in raw json-->
         {{ image }}
     </div>
 </template>
